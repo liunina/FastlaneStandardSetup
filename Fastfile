@@ -71,7 +71,6 @@ platform :ios do
       UI.message("发现 tag:#{target_version} 存在，即将执行删除动作 🚀")
       # 6.2  下面的两种写法都可以
       remove_git_tag(tag:target_version,isRL:true,isRR:true)
-      UI.message("Tag #{target_version} 已经删除 💥")
       #remove_tag(tag:tagName)
     end
     # 7.  添加 tag
