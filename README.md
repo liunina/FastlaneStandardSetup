@@ -20,7 +20,7 @@ import_from_git(url: 'http://nas.iliunian.com:82/liunian/FastlaneStandardSetup.g
 Enter the root directory of your project, and then, enter the following command at the terminal:
 
 ```bash
-$ fastlane release_pod project:"project name" version:"new version"
+$ fastlane release_pod repo:xxx project:"project name" version:"new version" desc:"release"
 ```
 
 ### Release private pod lib

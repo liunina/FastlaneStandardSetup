@@ -43,6 +43,7 @@ platform :ios do
     # 4.  pod install
     cocoapods(
       clean: true,
+      repo_update: true,
       podfile: "./Example/Podfile"
     )
     # 5.  提交代码到远程仓库
