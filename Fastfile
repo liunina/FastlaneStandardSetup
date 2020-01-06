@@ -81,7 +81,7 @@ platform :ios do
     
     # 9.  本地验证 spec 文件
     if target_verbose.nil? || target_verbose.empty?
-      pod_lib_lint(allow_warnings: true)
+      pod_lib_lint(allow_warnings: true, sources: ["git@git.iliunian.cn:apple/NLSpecs.git", "https://cdn.cocoapods.org/"])
     else
       pod_lib_lint(allow_warnings: true, verbose: true)
     end

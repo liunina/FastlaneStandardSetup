@@ -9,7 +9,8 @@ If you have not installed Fastlane before, please [install fastlane](https://doc
 Create a `fastlane` folder in the root folder of your project and create a `Fastfile` file in this folder, simply add the following line to your Fastfile:
 
 ```ruby
-import_from_git(url: 'http://nas.iliunian.com:82/liunian/FastlaneStandardSetup', branch: 'master')
+import_from_git(url: 'http://nas.iliunian.com:82/liunian/FastlaneStandardSetup.git',
+          path: 'Fastfile')
 ```
 
 ## Usage
