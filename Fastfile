@@ -81,19 +81,19 @@ platform :ios do
     
     # 9.  本地验证 spec 文件
     if target_verbose.nil? || target_verbose.empty?
-      pod_lib_lint(allow_warnings: true, sources: ["git@git.iliunian.cn:apple/NLSpecs.git", "https://cdn.cocoapods.org/"])
+      pod_lib_lint(allow_warnings: true, sources: ["git@git.iliunian.cn:apple/NLSpecs.git", "https://github.com/CocoaPods/Specs.git"])
     else
-      pod_lib_lint(allow_warnings: true, verbose: true, sources: ["git@git.iliunian.cn:apple/NLSpecs.git", "https://cdn.cocoapods.org/"])
+      pod_lib_lint(allow_warnings: true, verbose: true, sources: ["git@git.iliunian.cn:apple/NLSpecs.git", "https://github.com/CocoaPods/Specs.git"])
     end
   
     # 10.检查是否传了 repo 参数
     if target_repo
       # 10.1  pod repo push 'target_repo' 'spec_path'
-      pod_push(path: spec_path, repo: target_repo, allow_warnings: true, sources: ["git@git.iliunian.cn:apple/NLSpecs.git", "https://cdn.cocoapods.org/"])
+      pod_push(path: spec_path, repo: target_repo, allow_warnings: true, sources: ["git@git.iliunian.cn:apple/NLSpecs.git", "https://github.com/CocoaPods/Specs.git"])
       UI.message("Release lib #{target_project} new version #{target_version} to repo #{target_repo} Successfully! 🎉 ")
     else
       # 10.2  pod trunk push 'spec_path'
-      pod_push(path: spec_path, allow_warnings: true, sources: ["git@git.iliunian.cn:apple/NLSpecs.git", "https://cdn.cocoapods.org/"])
+      pod_push(path: spec_path, allow_warnings: true, sources: ["git@git.iliunian.cn:apple/NLSpecs.git", "https://github.com/CocoaPods/Specs.git"])
       UI.message("Release lib #{target_project} new version #{target_version} to CocoaPods/Specs Successfully! 🎉 ")
     end
   end
