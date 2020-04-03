@@ -33,8 +33,7 @@ platform :ios do
     end
 
     UI.message("👉 Start release lib #{target_project} new version #{target_version}")
-    
-    cocoapods(use_bundle_exec: false)
+  
     # 1.  git pull
     git_pull 
     # 2.  确认是 master 分支
@@ -45,6 +44,7 @@ platform :ios do
     cocoapods(
       clean: true,
       repo_update: true,
+      use_bundle_exec: false,
       podfile: "./Example/Podfile"
     )
     # 5.  提交代码到远程仓库
