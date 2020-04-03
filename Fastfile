@@ -33,7 +33,8 @@ platform :ios do
     end
 
     UI.message("👉 Start release lib #{target_project} new version #{target_version}")
-      
+    
+    cocoapods(use_bundle_exec: false)
     # 1.  git pull
     git_pull 
     # 2.  确认是 master 分支
@@ -87,7 +88,7 @@ platform :ios do
     else
       t_verbose = true
     end
-    
+
     pod_lib_lint(allow_warnings: true, verbose: t_verbose, sources: target_sources)
 
     # 10.检查是否传了 repo 参数
