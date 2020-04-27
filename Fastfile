@@ -1,17 +1,3 @@
-# This file contains the fastlane.tools configuration
-# You can find the documentation at https://docs.fastlane.tools
-#
-# For a list of all available actions, check out
-#
-#     https://docs.fastlane.tools/actions
-#
-# For a list of all available plugins, check out
-#
-#     https://docs.fastlane.tools/plugins/available-plugins
-#
-
-# Uncomment the line if you want fastlane to automatically update itself
-# update_fastlane
 
 default_platform(:ios)
 
@@ -82,6 +68,14 @@ platform :ios do
     
     t_verbose = true
     target_sources = ["https://github.com/CocoaPods/Specs.git", "https://github.com/liunina/NLSpecs.git", "http://nas.iliunian.com:82/GiHoo/GiHooSpecs.git"];
+
+    if target_repo == 'NLSpecs'
+      target_sources = ["https://github.com/CocoaPods/Specs.git", "https://github.com/liunina/NLSpecs.git"];
+    elsif target_repo == 'GiHooSpecs'
+      target_sources = ["https://github.com/CocoaPods/Specs.git", "https://github.com/liunina/NLSpecs.git", "http://nas.iliunian.com:82/GiHoo/GiHooSpecs.git"];
+    elsif target_repo == 'MedSpecs'
+      target_sources = ["https://github.com/CocoaPods/Specs.git", "https://github.com/liunina/NLSpecs.git", "http://nas.iliunian.com:82/medusa/MedSpecs.git"];
+    end
     # 9.  本地验证 spec 文件
     if target_verbose.nil? || target_verbose.empty?
       t_verbose = false
